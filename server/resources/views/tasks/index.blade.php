@@ -2,18 +2,19 @@
 <h1><b>タスク一覧</b></h1>
 
 @foreach ($tasks as $task)
+{{-- actionはフォームを送信する先に指定する --}}
     <form action="/tasks" method="post">
-    @csrf
-    <div style="display:inline-flex">  
-        <li style="list-style: none;">
-            <a href="/tasks/{{ $task->id }}">{{ $task->title }}</a>
-        </li>
+        @csrf
+        <div style="display:inline-flex">  
+            <li style="list-style: none;">
+                <a href="/tasks/{{ $task->id }}">{{ $task->title }}</a>
+            </li>
     </form>
-        <form action="/tasks/{{ $task->id }}" method="post">
+    <form action="/tasks/{{ $task->id }}">
         @csrf
         @method('DELETE')
         <input type="submit" value="削除する" onclick="if(!confirm('削除しますか?')){return false};">
-    </div>
+        </div>
     </form>
 @endforeach
 
@@ -37,10 +38,10 @@
 <form action="/tasks" method="post">
     @csrf
     <p>タイトル<br>
-    <input type="string" name="title" value="{{ old('title') }}">
+        <input type="string" name="title" value="{{ old('title') }}">
     </p>
     <p>内容<br>
-    <textarea type="text" name="contents" value="{{ old('contents') }}"></textarea>
+        <textarea type="text" name="contents" value="{{ old('contents') }}"></textarea>
     </p>
     <input type="submit" value="Create Task">
 </form>
