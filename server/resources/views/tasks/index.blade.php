@@ -3,13 +3,10 @@
 
 @foreach ($tasks as $task)
 {{-- actionはフォームを送信する先に指定する --}}
-    <form action="/tasks" method="post">
-        @csrf
-        <div style="display:inline-flex">  
-            <li style="list-style: none;">
-                <a href="/tasks/{{ $task->id }}">{{ $task->title }}</a>
-            </li>
-    </form>
+    <div style="display:inline-flex">  
+        <li style="list-style: none;">
+            <a href="/tasks/{{ $task->id }}">{{ $task->title }}</a>
+        </li>
     <form action="/tasks/{{ $task->id }}">
         @csrf
         @method('DELETE')
