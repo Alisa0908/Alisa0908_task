@@ -26,7 +26,7 @@
     <input type="text" name="contents" value="{{ $task->contents }}">
     </p>
     
-    <input type="submit" value="更新">
+    <textarea>更新</textarea>
 </form>
 <div style="display:inline-flex">
     <a href="/tasks/{{ $task->id }}"><button>詳細に戻る</button></a>
