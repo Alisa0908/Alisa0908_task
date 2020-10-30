@@ -19,7 +19,7 @@
     <input type="hidden" name="id" value="{{ $task->id }}">
 
     <p>論文タイトル
-    <input type="string" name="title" value="{{ $task->title }}">
+    <input type="text" name="title" value="{{ $task->title }}">
     </p>
 
     <p>本文

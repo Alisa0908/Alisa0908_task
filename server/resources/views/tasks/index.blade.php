@@ -7,12 +7,12 @@
         <li style="list-style: none;">
             <a href="/tasks/{{ $task->id }}">{{ $task->title }}</a>
         </li>
-    <form action="/tasks/{{ $task->id }}">
-        @csrf
-        @method('DELETE')
-        <input type="submit" value="削除する" onclick="if(!confirm('削除しますか?')){return false};">
-        </div>
-    </form>
+        <form action="/tasks/{{ $task->id }}">
+            @csrf
+            @method('DELETE')
+            <input type="submit" value="削除する" onclick="if(!confirm('削除しますか?')){return false};">
+        </form>
+    </div>
 @endforeach
 
 <hr>
